@@ -1,6 +1,6 @@
-# Mi simulador de RISC-V
+# Simulador de RISC-V
 
-Este proyecto es mi implementación de la Tarea 5 de Arquitectura de Computadores. Estoy construyendo un simulador de la ISA base RISC-V de 32 bits (RV32I) en C17.
+Construcción de un simulador de la ISA base RISC-V de 32 bits (RV32I) en C17.
 
 La idea es poder cargar un programa ya compilado y ver, paso a paso, qué hace la CPU. Cuando ejecuto `step`, el simulador muestra la instrucción, el valor de sus bits y los cambios que produce en los registros, la memoria y el contador de programa. Así puedo seguir la ejecución sin tener que deducir cada cambio mirando solamente el código máquina.
 
@@ -46,7 +46,7 @@ PC 0x00000000 | 0x00700293 | addi x5, x0, 7
   PC siguiente: 0x00000004
 ```
 
-## Qué incluye esta versión
+## Qué incluye
 
 La CPU mantiene el PC, los 32 registros y una memoria direccionable por byte en formato little-endian. La memoria usa páginas dispersas de 4 KiB: solo reserva una página cuando el programa escribe en ella. El registro `x0` siempre conserva el valor cero.
 
@@ -73,7 +73,7 @@ python3 programs/export_raw.py
 
 Ese script solo empaqueta las palabras explícitas en orden little-endian; no es un ensamblador general.
 
-## Organización del código
+## Organización
 
 - `src/memory.c`: lecturas, escrituras y carga de bytes en memoria.
 - `src/decoder.c`: identificación de instrucciones y reconstrucción de inmediatos.
