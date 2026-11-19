@@ -7,8 +7,8 @@ _start:
     .word 0x00000393  # addi x7, x0, 0         ; suma
 loop:
     .word 0x005383B3  # add  x7, x7, x5
+    .word 0x0062D663  # bge  x5, x6, +12       ; salir después de sumar 5
     .word 0x00128293  # addi x5, x5, 1
-    .word 0x0062D463  # bge  x5, x6, +8        ; salir cuando contador >= 5
     .word 0xFF1FF06F  # jal  x0, -16           ; volver a loop
 done:
     .word 0x10702223  # sw   x7, 0x104(x0)     ; resultado: 15
