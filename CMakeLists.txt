@@ -11,5 +11,11 @@ else()
     add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-add_executable(riscv-miguel src/main.c src/memory.c src/decoder.c src/cpu.c)
+add_executable(riscv-miguel
+    src/main.c
+    src/cli.c
+    src/cpu.c
+    src/decoder.c
+    src/memory.c
+)
 target_include_directories(riscv-miguel PRIVATE include)
