@@ -1,6 +1,10 @@
 # Simulador RISC-V de Miguel
 
-Proyecto de la Tarea 5 de Arquitectura de Computadores. Se desarrollará en C17 y empezará con una interfaz de terminal para cargar y ejecutar programas binarios RV32I.
+Proyecto de la Tarea 5 de Arquitectura de Computadores, desarrollado en C17.
+
+## Etapa actual: memoria
+
+La memoria es byte-addressable, usa orden little-endian y reserva páginas de 4 KiB solo cuando se escriben. Incluye lecturas y escrituras de 8, 16 y 32 bits, así como carga de bloques de bytes.
 
 ## Compilar
 
@@ -11,4 +15,4 @@ cmake -S . -B build
 cmake --build build
 ```
 
-El simulador se implementará por etapas: configuración del proyecto, memoria, decodificación, ejecución de instrucciones e interfaz interactiva.
+Las siguientes etapas añadirán decodificación de instrucciones, ejecución de CPU y controles interactivos de terminal.
